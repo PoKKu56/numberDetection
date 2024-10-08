@@ -12,3 +12,4 @@
 В качестве набора данных используется <a href="https://www.kaggle.com/datasets/hojjatk/mnist-dataset/data">"Mnist"</a>.
 <p>Технологией обучения нейронной сети YOLOv8.</p>
 <img src="https://user-images.githubusercontent.com/27466624/222869864-1955f054-aa6d-4a80-aed3-92f30af28849.jpg">
+<a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">Документалка по разработке программы.</a>
