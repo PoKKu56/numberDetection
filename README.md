@@ -13,7 +13,7 @@
 <p>Технологией обучения нейронной сети YOLOv8.</p>
 <img src="https://user-images.githubusercontent.com/27466624/222869864-1955f054-aa6d-4a80-aed3-92f30af28849.jpg" style = "width: 800px; height: auto;">
 <h2>Прототип интерфейса</h2>
-<img src = "Project Design/image.png">
+<img src = "Project Design/main_page_1.png">
 <h2>Информация о процессе разработки</h2>
 <img src = "https://media1.tenor.com/m/N0MNEV-5or4AAAAC/chipi-chipi-chipi.gif">
 <a href="https://www.youtube.com/watch?v=xm3YgoEiEDc">Документалка по разработке программы</a>
