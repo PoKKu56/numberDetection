@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMDETECT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(244, 235, 217, 0.6);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(101, 67, 33, 0.9);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+        header a {
+            color: black; /* Цвет ссылок черный */
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        header img {
+            height: 100%; /* Иконка на всю высоту меню */
+        }
+        h1 {
+            color: red;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .upload-local-box {
+            border: 2px dashed black;
+            padding: 20px;
+            width: 300px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 15px; /* Закругленные края бокса */
+        }
+        .upload-local-box input[type="file"], .upload-local-box input[type="url"], .upload-local-box button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .upload-local-box img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .upload-local-box button {
+            background-color: rgba(101, 67, 33, 0.9);
+            color: white;
+            cursor: pointer;
+        }
+        .upload-local-box button:hover {
+            background-color: rgba(101, 67, 33, 1);
+        }
+        .upload-url-box {
+            border: 2px solid black;
+            width: 450px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 0px 0px 15px 15px;
+            display: flex;
+            align-items: center;
+        }
+        .upload-url-box img {
+            width: 10%;
+            height: 10%;
+        }
+        .upload-url-box button {
+            color: white;
+            cursor: pointer;
+        }
+        .upload-button {
+            border: none;
+            background-color: inherit;
+            width: 1000px;
+        }
+        .example h2{
+            margin: 30px auto;
+            text-align: center;
+        }
+        .example img {
+            margin: 0 10px;
+        }
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .images img:nth-child(1) {
+            width: 15%; 
+        }
+        .example img:nth-child(2) {
+            width: 4%; 
+        }
+        .example img:nth-child(3) {
+            width: 15%; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="main_icon.png" alt="Main Icon">
+        <nav>
+            <a href="\">NUMDETECT</a>
+            <a href="\results">Результаты</a>
+            <a href="\help">Помощь</a>
+            <a href="\developers">Разработчики</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Распознавание цифр на картинке</h1>
+        <div class="container">
+            <p>Загрузите картинку, затем сайт автоматически распознает все числа на изображении</p>
+
+            <div class="upload-local-box">
+                <p>Загрузите вашу фотографию</p>
+                <img src="load_file_system.png" alt="Загрузить из системы">
+                <input type="file" name="file">
+            </div>
+            <div class="upload-url-box">
+                <p>Введите ссылку:</p>
+                <input type="url" name="url" placeholder="URL...">
+                <button class="upload-button"><img src="upload_icon.png" alt="Загрузить по ссылке"></button>
+            </div>
+        </div>
+
+        <div class="example">
+            <h2>Пример:</h2>
+            <div class="images">
+                <img src="example1.jpg" alt="Пример 1">
+                <img src="processing.png" alt="Обработка сервером">
+                <img src="example2.jpg" alt="Пример 2">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
