@@ -7,12 +7,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: rgba(244, 235, 217, 0.6);
+            background-color: #f4ebd999;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: rgba(101, 67, 33, 0.9);
+            background-color: #654321e6;
             color: white;
             padding: 10px;
             text-align: center;
@@ -22,39 +22,35 @@
             height: 50px;
         }
         header a {
-            color: black; /* Цвет ссылок черный */
+            color: black;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 30px;
+            font-size: 17pt;
         }
         header img {
-            height: 100%; /* Иконка на всю высоту меню */
+            height: 135%; 
         }
         h1 {
             color: red;
             text-align: center;
+            font-size: 27pt;
         }
         .container {
             text-align: center;
             margin: 20px auto;
         }
+        /* Основной блок с пунктирной линией */
         .upload-local-box {
             border: 2px dashed black;
-            padding: 20px;
-            width: 300px;
+            width: 450px;
+            height: 200px;
             margin: 20px auto;
+            margin-bottom: 0px;
             background-color: white;
-            border-radius: 15px; /* Закругленные края бокса */
-        }
-        .upload-local-box input[type="file"], .upload-local-box input[type="url"], .upload-local-box button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            border-radius: 15px 15px 0px 0px;
         }
         .upload-local-box img {
             width: 50px;
-            margin-bottom: 10px;
         }
         .upload-local-box button {
             background-color: rgba(101, 67, 33, 0.9);
@@ -64,28 +60,55 @@
         .upload-local-box button:hover {
             background-color: rgba(101, 67, 33, 1);
         }
+        .upload-local-box input {
+            display: none;
+        }
+        .upload-local-box p {
+            font-size: 20pt;
+        }
+        /* Основной блок с прямыми линиями */
         .upload-url-box {
             border: 2px solid black;
+            border-top: none;
             width: 450px;
             margin: 20px auto;
+            margin-top: 0px;
             background-color: white;
             border-radius: 0px 0px 15px 15px;
             display: flex;
             align-items: center;
-        }
-        .upload-url-box img {
-            width: 10%;
-            height: 10%;
+            justify-content: space-between;
+            height: 75px;
         }
         .upload-url-box button {
             color: white;
             cursor: pointer;
         }
+        .upload-url-box input {
+            flex-grow: 1; 
+            margin-left: 7px;
+            padding: 15px;
+            font-size: 11pt;
+            border: 2px solid black;
+        }
+        .divider {
+            width: 2px;
+            height: 75px; /* Высота палки */
+            background-color: black; /* Цвет палки */
+            margin: 0 2px;
+        }
         .upload-button {
             border: none;
             background-color: inherit;
-            width: 1000px;
+            cursor: pointer;
+            flex-grow: 0; 
+            width: 50px;
         }
+        .upload-button img {
+            width: 100%; 
+            height: 100%; 
+        }
+        /* Нижние примеры под страницей */
         .example h2{
             margin: 30px auto;
             text-align: center;
@@ -107,6 +130,7 @@
         .example img:nth-child(3) {
             width: 15%; 
         }
+
     </style>
 </head>
 <body>
@@ -127,11 +151,12 @@
 
             <div class="upload-local-box">
                 <p>Загрузите вашу фотографию</p>
-                <img src="load_file_system.png" alt="Загрузить из системы">
-                <input type="file" name="file">
+                <img id="uploadImage" src="load_file_system.png" alt="Загрузить из системы">
+                <input type="file" name="file" id="fileInput">
             </div>
             <div class="upload-url-box">
                 <p>Введите ссылку:</p>
+                <div class="divider"></div>
                 <input type="url" name="url" placeholder="URL...">
                 <button class="upload-button"><img src="upload_icon.png" alt="Загрузить по ссылке"></button>
             </div>
@@ -146,5 +171,11 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.getElementById('uploadImage').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    </script>    
 </body>
 </html>
