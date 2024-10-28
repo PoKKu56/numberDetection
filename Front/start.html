@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NUMDETECT</title>
     <style>
+        /* Стили */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4ebd999;
@@ -34,12 +35,12 @@
             color: red;
             text-align: center;
             font-size: 27pt;
+            margin-bottom: 20px;
         }
         .container {
             text-align: center;
             margin: 20px auto;
         }
-        /* Основной блок с пунктирной линией */
         .upload-local-box {
             border: 2px dashed black;
             width: 450px;
@@ -48,25 +49,26 @@
             margin-bottom: 0px;
             background-color: white;
             border-radius: 15px 15px 0px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 70px;
+        }
+        .upload-local-box.drag-over {
+            background-color: #e0e0e0; /* Цвет фона при перетаскивании */
         }
         .upload-local-box img {
             width: 50px;
         }
-        .upload-local-box button {
-            background-color: rgba(101, 67, 33, 0.9);
-            color: white;
-            cursor: pointer;
-        }
-        .upload-local-box button:hover {
-            background-color: rgba(101, 67, 33, 1);
-        }
         .upload-local-box input {
             display: none;
-        }
+        }   
         .upload-local-box p {
             font-size: 20pt;
         }
-        /* Основной блок с прямыми линиями */
         .upload-url-box {
             border: 2px solid black;
             border-top: none;
@@ -93,8 +95,8 @@
         }
         .divider {
             width: 2px;
-            height: 75px; /* Высота палки */
-            background-color: black; /* Цвет палки */
+            height: 75px;
+            background-color: black;
             margin: 0 2px;
         }
         .upload-button {
@@ -108,7 +110,9 @@
             width: 100%; 
             height: 100%; 
         }
-        /* Нижние примеры под страницей */
+        .example {
+            margin-top: 50px;
+        }
         .example h2{
             margin: 30px auto;
             text-align: center;
@@ -130,7 +134,6 @@
         .example img:nth-child(3) {
             width: 15%; 
         }
-
     </style>
 </head>
 <body>
@@ -149,17 +152,19 @@
         <div class="container">
             <p>Загрузите картинку, затем сайт автоматически распознает все числа на изображении</p>
 
-            <div class="upload-local-box">
+            <div class="upload-local-box" id="uploadBox">
                 <p>Загрузите вашу фотографию</p>
-                <img id="uploadImage" src="load_file_system.png" alt="Загрузить из системы">
-                <input type="file" name="file" id="fileInput">
+                <img src="load_file_system.png" alt="Загрузить из системы">
+                <input type="file" id="fileInput">
             </div>
+
             <div class="upload-url-box">
                 <p>Введите ссылку:</p>
                 <div class="divider"></div>
                 <input type="url" name="url" placeholder="URL...">
                 <button class="upload-button"><img src="upload_icon.png" alt="Загрузить по ссылке"></button>
             </div>
+
         </div>
 
         <div class="example">
@@ -173,9 +178,39 @@
     </main>
 
     <script>
-        document.getElementById('uploadImage').addEventListener('click', function() {
-            document.getElementById('fileInput').click();
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fileInput');
+
+        uploadBox.addEventListener('click', () => {
+            fileInput.click();
         });
-    </script>    
+
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.classList.add('drag-over');
+        });
+
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.classList.remove('drag-over');
+        });
+
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length) {
+                fileInput.files = files;
+                const event = new Event('change');
+                fileInput.dispatchEvent(event);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                console.log('Загружен файл:', file.name);
+            }
+        });
+    </script>
 </body>
 </html>
