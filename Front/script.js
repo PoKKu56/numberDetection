@@ -32,21 +32,3 @@ fileInput.addEventListener('change', (e) => {
         console.log('Загружен файл:', file.name);
     }
 });
-
-// devs.html
-document.addEventListener("DOMContentLoaded", function() {
-    const readmeUrl = 'https://raw.githubusercontent.com/PoKKu56/numberDetection/main/README.md';
-    fetch(readmeUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Сеть ответила с ошибкой: ' + response.status);
-            }
-            return response.text();
-        })
-        .then(markdown => {
-            const htmlContent = marked(markdown);
-            const contentContainer = document.getElementById("readme-content");
-            contentContainer.innerHTML = htmlContent;
-        })
-        .catch(error => console.error('Ошибка загрузки README.md:', error));
-});
