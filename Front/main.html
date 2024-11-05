@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMDETECT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="main_icon.png" alt="Main Icon">
+        <nav>
+            <a href="">NUMDETECT</a>
+            <a href="results.html">Результаты</a>
+            <a href="help.html">Помощь</a>
+            <a href="devs.html">Разработчики</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Распознавание цифр на картинке</h1>
+        <div class="container">
+            <p>Загрузите картинку, затем сайт автоматически распознает все числа на изображении</p>
+
+            <div class="upload-local-box" id="uploadBox">
+                <p>Загрузите вашу фотографию</p>
+                <img src="load_file_system.png" alt="Загрузить из системы">
+                <input type="file" id="fileInput">
+            </div>
+
+            <div class="upload-url-box">
+                <p>Введите ссылку:</p>
+                <div class="divider"></div>
+                <input type="url" name="url" placeholder="URL...">
+                <button class="upload-button"><img src="upload_icon.png" alt="Загрузить по ссылке"></button>
+            </div>
+
+        </div>
+
+        <div class="example">
+            <h2>Пример:</h2>
+            <div class="main-images">
+                <img src="example1.jpg" alt="Пример до">
+                <img src="processing.png" alt="Обработка сервером">
+                <img src="example2.jpg" alt="Пример после распозвания">
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script> 
+</body>
+</html>
