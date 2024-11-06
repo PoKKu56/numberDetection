@@ -1,6 +1,6 @@
 /* Общее */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     background-color: #f4ebd999;
     margin: 0;
     padding: 0;
@@ -45,7 +45,7 @@ header img {
     height: 135%; 
 }
 h1 {
-    color: red;
+    color: #0400ff;
     text-align: center;
     font-size: 27pt;
     margin-bottom: 20px;
@@ -189,4 +189,6 @@ ol {
     margin: 10px auto; 
     text-align: center;
 }
-
+.git-content {
+    font-size: 18pt;    
+}
