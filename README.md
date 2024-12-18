@@ -3,6 +3,8 @@
 <h1> Описание </h1>
 <p>Разработка программы ведется в рамках учебного процесса, между преподавателем и студентом. Система должна быть разработана до конца 2024 года и сдана в опытную эксплуатацию.</p>
 
+<a href = "https://github.com/PoKKu56/numberDetectionJava/tree/develop"> Java проект </a>
+
 # Разработчики
 1. <a href = "https://github.com/onepixex"> Полехов Дмитрий Андреевич - Front-End Developer </a>
 2. <a href = "https://github.com/Lis-sys"> Кучин Арсений Алексеевич - Project Manager </a>
