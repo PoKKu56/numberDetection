@@ -1,0 +1,194 @@
+/* Общее */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f4ebd999;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #654321e6;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+header a {
+    color: black;
+    text-decoration: none;
+    margin: 0 30px;
+    font-size: 17pt;
+    position: relative;
+}
+header a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: black;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+header a:hover::after {
+    width: 100%;           
+    left: 0;                
+}
+header a.active::after {
+    width: 100%;
+    left: 0;
+}
+header img {
+    height: 135%; 
+}
+h1 {
+    color: #0400ff;
+    text-align: center;
+    font-size: 27pt;
+    margin-bottom: 20px;
+}
+
+/* Главная страница */
+.container {
+    text-align: center;
+    margin: 20px auto;
+}
+.upload-local-box {
+    border: 2px dashed black;
+    width: 450px;
+    height: 200px;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    background-color: white;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 70px;
+}
+.upload-local-box.drag-over {
+    background-color: #e0e0e0;
+}
+.upload-local-box img {
+    width: 50px;
+}
+.upload-local-box input {
+    display: none;
+}   
+.upload-local-box p {
+    font-size: 20pt;
+}
+.upload-url-box {
+    border: 2px solid black;
+    border-top: none;
+    width: 450px;
+    margin: 20px auto;
+    margin-top: 0px;
+    background-color: white;
+    border-radius: 0px 0px 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+}
+.upload-url-box button {
+    color: white;
+    cursor: pointer;
+}
+.upload-url-box input {
+    flex-grow: 1; 
+    margin-left: 7px;
+    padding: 15px;
+    font-size: 11pt;
+    border: 2px solid black;
+}
+.divider {
+    width: 2px;
+    height: 75px;
+    background-color: black;
+    margin: 0 2px;
+}
+.upload-button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    flex-grow: 0; 
+    width: 50px;
+}
+.upload-button img {
+    width: 100%; 
+    height: 100%; 
+}
+.example {
+    margin-top: 50px;
+}
+.example h2{
+    margin: 30px auto;
+    text-align: center;
+}
+.example img {
+    margin: 0 10px;
+}
+.main-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-images img:nth-child(1) {
+    width: 15%; 
+}
+.main-images img:nth-child(2) {
+    width: 4%; 
+}
+.main-images img:nth-child(3) {
+    width: 15%; 
+}
+
+/* Результаты */
+.result-images {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result-images img {
+    width: 18%;
+}
+
+/* Помощь */
+.help-images {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 20px;
+}
+.help-images img {
+    width: 80%; 
+    max-width: 600px;
+    height: auto; 
+    margin: 10px 0;
+}
+
+/* Разработчики */
+ol {
+    margin: 0 auto;
+    padding: 0;
+    list-style-position: inside; 
+    text-align: left;
+    width: fit-content;
+}
+.prank {
+    display: block; 
+    margin: 10px auto; 
+    text-align: center;
+}
+.git-content {
+    font-size: 18pt;    
+}
