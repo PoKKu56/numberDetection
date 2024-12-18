@@ -5,6 +5,8 @@ from PIL import Image
 import cv2
 import numpy as np
 from ultralytics import YOLO
+from ImageResponse import ImageResponse
+from ImageRequest import ImageRequest
 
 app = FastAPI()
 
